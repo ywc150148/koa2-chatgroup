@@ -1,10 +1,5 @@
 !(function () {
-    let socket = io('ws:https//' + location.host + '/namespace', {
-            reconnectionAttempts: 10,
-            query: {
-                uid: this.state.user.uid
-            }
-        }),
+    let socket = io('ws:https//' + location.host + '/namespace'),
         _id,
         main = document.getElementById("main"),
         msgLayout = document.getElementById("msg-layout"),
