@@ -200,7 +200,7 @@
         msg_name.classList.add("msg-name");
         msg_name.innerText = data.user.nickName;
         msg_head.classList.add("msg-head");
-        msg_head.src = 'http://' + window.location.hostname + `:8081/images/head/sex_${data.user.sex}.png`;
+        msg_head.src = 'http://' + window.location.hostname + `/images/head/sex_${data.user.sex}.png`;
         msg_box.classList.add("msg-box");
         msg_box.innerText = data.msg;
         msg_time.classList.add("msg-time");
