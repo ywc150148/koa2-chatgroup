@@ -1,5 +1,9 @@
 !(function () {
-    let socket = io('ws:https//' + location.host + '/namespace'),
+
+    let hostname = window.location.hostname == '127.0.0.1'?'127.0.0.1:8081':window.location.hostname;
+    console.log("这个host",host)
+
+    let socket = io('ws://' + hostname + '/namespace'),
         _id,
         main = document.getElementById("main"),
         msgLayout = document.getElementById("msg-layout"),
