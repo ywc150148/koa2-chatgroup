@@ -1,5 +1,5 @@
 !(function () {
-    let socket = io('ws://' + location.host + '/namespace'),
+    let socket = io('ws://' + location.host + ':8081/namespace'),
         _id,
         main = document.getElementById("main"),
         msgLayout = document.getElementById("msg-layout"),
