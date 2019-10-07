@@ -1,0 +1,10 @@
+{% extends 'layout/main.html' %}
+
+{% block routename %}
+<h1>{{route_name}}</h1>
+{% endblock %}
+
+{% block body %}
+{{super()}}
+<h2>这里是hello</h2>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'layout/main.html' %}
+
+{% block routename %}
+<h1>{{route_name}}</h1>
+{% endblock %}
+
+{% block body %}
+<div class="main-content" style="margin-top: 30px;">
+    <h2>欢迎访问本网站</h2>
+    <p>本网站仅作为测试站点使用，本网站内容、数据和用户数据仅作为临时测试数据，以下将本网站简称本站。</p>
+    <p>如果你使用了本站的注册功能，本站对你的信息<strong>不作任何加密处理直接录入数据库</strong>，请注意勿留下任何包含你个人隐私、敏感等信息，本站的数据保存期限不稳定，随时删库。</p>
+    <p>本站不会你的个人信息负责，就这么跟你说了。</p>
+</div>
+<div style="margin-top:30px;">
+    <h2>功能</h2>
+    <p>本站提供测试的功能</p>
+    <ul>
+        <li>注册</li>
+        <li>登录</li>
+        <li style="text-decoration:line-through">查询所有用户信息</li>
+        <li>用户个人信息</li>
+        <li>修改用户个人信息
+            <ul>
+                <li>修改密码</li>
+                <li>修改昵称</li>
+                <li>修改性别</li>
+            </ul>
+        </li>
+        <li>网络聊天室
+            <ul>
+                <li>实时聊天</li>
+                <li>加入房间</li>
+                <li>退出房间</li>
+            </ul>
+
+        </li>
+    </ul>
+</div>
+<div style="margin-top:30px;">
+    <h2>技术栈</h2>
+    <p>搭建本站使用的技术栈</p>
+    <ul>
+        <li>前端
+            <ul>
+                <li>h5</li>
+                <li>css3</li>
+                <li>javascript</li>
+            </ul>
+        </li>
+        <li>后端
+            <ul>
+                <li>node.js环境 + Koa2框架</li>
+                <li>MongoDB</li>
+                <li>Socket.io</li>
+            </ul>
+        </li>
+        <li>
+            服务器
+            <ul>
+                <li>CentOs7系统</li>
+                <li>Nginx代理服务器</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<div class="main-content" style="margin-top:30px;">
+    <h2>PostScript</h2>
+    <p>为何做一个如此简单的Web应用（网站）？</p>
+    <p>
+        因为本站其实就是一个学习Koa2框架的同时做的demo，学习Socket.io需要把项目放到真实服务器环境测试，因此你在线上暂时可以看到此项目，<strong>说白了就是找人测试</strong>。
+    </p>
+    <p>因为是demo，前端方面不用美观，如果你使用移动设备访问本站，可以感受到6年前2g网络时代的web风格，如：霓虹灯闪烁的文字特效，不加样式的表单组件。文字就是主要内容，qq空间的文字游戏让人玩的不亦乐乎。</p>
+</div>
+
+{% endblock %}

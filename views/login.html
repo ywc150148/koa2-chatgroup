@@ -1,0 +1,23 @@
+{% extends 'layout/main.html' %}
+
+{% block routename %}
+<h1>{{route_name}}</h1>
+{% endblock %}
+
+{% block body %}
+<form action="/login" method="POST">
+    <div>
+        <label for="name">用户名</label>
+        <div>
+            <input type="text" name="name" placeholder="请输入用户名">
+        </div>
+    </div>
+    <div>
+        <label for="password">密码</label>
+        <div>
+            <input type="password" name="password" placeholder="请输入密码">
+        </div>
+    </div>
+    <button type="submit">登录</button>
+</form>
+{% endblock %}

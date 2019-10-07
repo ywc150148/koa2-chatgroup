@@ -1,0 +1,18 @@
+{% extends 'layout/main.html' %}
+
+{% block routename %}
+<h1>{{status}}</h1>
+{% endblock %}
+
+{% block body %}
+
+{% if msg %}
+<h2 style="margin-top: 80px;">
+    {% if status %}
+    {{status}}-
+    {% endif %}{{msg}}
+</h2>
+<p> <a href="/">返回首页</a></p>
+{% endif %}
+
+{% endblock %}

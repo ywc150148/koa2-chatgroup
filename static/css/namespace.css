@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clear-fix::after {
+    display: block;
+    content: " ";
+    clear: both;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+#main {
+    position: relative;
+    padding: 50px 10px 0;
+    max-width: 100%;
+    background: rgb(233, 233, 233);
+    overflow-y: hidden;
+}
+
+#msg-layout {
+    height: auto;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 50px;
+    width: 100%;
+    height: 50px;
+    line-height: 30px;
+    text-align: center;
+    background: rgb(233, 233, 233);
+    z-index: 6;
+}
+
+.groupname {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    width: 100%;
+    height: 30px;
+}
+
+#header-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 50px;
+}
+
+#btnMenu {
+    display: block;
+    margin: 10px 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 6px;
+}
+
+#Menu {
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    padding: 6px 0;
+    width: 120px;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0px 0px 6px #999999;
+}
+
+#Menu p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-align: center;
+    padding: 0 2px;
+    width: 100%;
+    height: 30px;
+}
+
+#Menu .iconfont {
+    font-size: 14px;
+}
+
+#Menu span {
+    font-size: 14px;
+}
+
+.msg {
+    position: relative;
+    margin-bottom: 30px;
+    padding-right: 50px;
+    padding-left: 50px;
+    min-height: 50px;
+}
+
+.msg-l {
+    width: 100%;
+}
+
+.msg-r {
+    width: 100%;
+    text-align: right;
+}
+
+.msg-name {
+    font-size: 12px;
+    color: rgb(145, 144, 144);
+}
+
+.msg-r .msg-name {
+    text-align: right;
+}
+
+.msg-head {
+    margin-top: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.msg-l .msg-head {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.msg-r .msg-head {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.msg-box {
+    display: inline-block;
+    margin-top: 4px;
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    font-size: 14px;
+    word-wrap:break-word;
+    word-break:break-all;
+    white-space:pre-wrap;
+}
+
+.msg-r .msg-box {
+    text-align: left;
+}
+
+.msg-time {
+    margin-top: 4px;
+    font-size: 10px;
+    color: #a1a1a1;
+}
+
+.msg-r .msg-time {
+    text-align: right;
+}
+
+#foot-layout {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#foot {
+    position: relative;
+    margin: 0;
+    padding: 8px 55px 5px 10px;
+    width: 100%;
+    min-height: 50px;
+    background: #f7f7f7;
+}
+
+#sendMsg {
+    display: block;
+    margin: 0 60px 0px 0;
+    padding: 6px 8px 0px;
+    width: 100%;
+    height: 36px;
+    max-height: 112px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    outline: 0 none;
+    resize: none;
+    background: #ffffff;
+}
+
+#btnSend {
+    position: absolute;
+    bottom: 6px;
+    right: 8px;
+    width: 40px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+    color: #555555;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+#online {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: 30px;
+    text-align: left;
+    font-size: 14px;
+    background: rgba(233, 233, 233, 0.733);
+}
+
+.Warning-none {
+    display: none;
+    width: 0;
+    height: 0;
+    position: fixed;
+    text-align: center;
+}
+
+#Warning.Warning-show {
+    display: block;
+    padding: 0 10px;
+    width: 100%;
+    height: auto;
+    animation: myfirst .3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes myfirst {
+    from {
+        top: 60%;
+        opacity: 0;
+        transform: scale(.6);
+    }
+
+    to {
+        top: 45%;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#Warning-span {
+    z-index: 9;
+    display: inline-block;
+    padding: 12px 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0px 0px 6px #999999;
+}

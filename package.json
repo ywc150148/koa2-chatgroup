@@ -1,0 +1,27 @@
+{
+  "name": "koa2-chatgroup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "set PORT=8081&&nodemon app.js",
+    "start2": "set PORT=8081&&node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ywc",
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.8.2",
+    "koa-bodyparser": "^3.2.0",
+    "koa-nunjucks-2": "^3.0.2",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
+    "koa-static": "^5.0.0",
+    "mongoose": "^5.7.3",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}

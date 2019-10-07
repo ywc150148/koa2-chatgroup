@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>{{title}}</title>
+    <script src='http://{{host}}/socket.io/socket.io.js'></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #mian {
+            margin: 100px 10px 30px;
+            padding: 20px;
+            max-width: 768px;
+            height: 300px;
+            background: rgb(247, 247, 247);
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+         #mian > div {
+             margin-bottom: 30px;
+         }
+
+        #foot {
+            margin: 0px 10px 30px;
+            padding: 20px;
+            max-width: 768px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mian"></div>
+    <div id="foot">
+        <input id="sendMsg" type="text" />
+        <button id="btnSend">发送</button>
+    </div>
+
+    <button id="btnLeave">离开房间</button>
+    <button id="btnjoin">加入房间</button>
+
+    <script type="text/javascript">
+        let socket = io('ws://{{host}}'),
+            main = document.getElementById("mian"),
+            sendMsg = document.getElementById("sendMsg"),
+            btnSend = document.getElementById("btnSend"),
+            btnjoin = document.getElementById("btnjoin"),
+            btnLeave = document.getElementById("btnLeave");
+
+        socket.emit("joinRoom", data => {
+            console.log("加入房间：" + JSON.stringify(data));
+        });
+
+        socket.on("receiveMsg", data => {
+            let person = data.id === socket.id ? "【我】" : "",
+                child = document.createElement("div");
+            child.innerHTML = data.id + person + ":" + data.msg;
+            main.appendChild(child)
+        });
+
+        btnSend.addEventListener("click", () => {
+            let msg = sendMsg.value;
+            if (!msg) return;
+
+            socket.emit("sendMsg", {
+                msg
+            }, res => {
+                if (res.code === -1) {
+                    alert(res.msg)
+                }
+            });
+            sendMsg.value = "";
+        });
+
+        btnjoin.addEventListener('click', () => {
+            socket.emit("joinRoom", data => {
+                console.log("加入房间：" + JSON.stringify(data));
+            })
+        })
+
+        btnLeave.addEventListener("click", () => {
+            socket.emit("leaveGroup", data => {
+                console.log("离开房间：" + JSON.stringify(data))
+            });
+        })
+    </script>
+</body>
+
+</html>

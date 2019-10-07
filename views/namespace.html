@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/namespace.css">
+    <link rel="stylesheet" href="/font/iconfont.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="online" class="iconfont icon-base-station-line" title="在线人数"></div>
+            <p class="groupname">{{groupname}}</p>
+            <nav id="header-nav">
+                <i id="btnMenu" class="iconfont icon-more"></i>
+                <div id="Menu" style="display:none;">
+                    <div id="btnLeave">
+                        <p>
+                            <i class="iconfont icon-tuichu"></i>
+                            <span>退出群聊</span>
+                        </p>
+                    </div>
+                    <div id="btnjoin">
+                        <p>
+                            <i class="iconfont icon-tianjialiaotian"></i>
+                            <span>加入群聊</span>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="msg-layout"></div>
+    </div>
+    <div id="foot-layout">
+        <div id="foot">
+            <textarea name="" id="sendMsg"></textarea>
+            <div id="btnSend" class="iconfont icon-send"></div>
+        </div>
+    </div>
+
+    <div id="Warning" class="Warning-none">
+        <span id="Warning-span"></span>
+    </div>
+</body>
+
+<script src='http://{{host}}/socket.io/socket.io.js'></script>
+<script src="/js/namespace.js"></script>
+
+</html>

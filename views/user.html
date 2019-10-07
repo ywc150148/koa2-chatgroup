@@ -1,0 +1,64 @@
+{% extends 'layout/main.html' %}
+
+{% block routename %}
+<h1>{{route_name}}</h1>
+{% endblock %}
+
+{% block body %}
+<div>
+    <div style="margin-bottom:30px;">
+        <label for="name">账号</label>
+        <div>
+            <input type="text" name="name" value="{{name}}" disabled="disabled" readonly="readonly">
+        </div>
+    </div>
+
+    <form action="/user/modify/password" method="POST" style="margin-bottom:30px;">
+        <h2>修改密码</h2>
+        <div>
+            <label for="password">原密码</label>
+            <div>
+                <input type="password" name="password" placeholder="请输入原密码">
+            </div>
+        </div>
+        <div>
+            <label for="newpassword">新密码</label>
+            <div>
+                <input type="password" name="newpassword" placeholder="请输入新密码">
+            </div>
+        </div>
+        <button type="submit">提交</button>
+    </form>
+
+    <form action="/user/modify/nickname" method="POST" style="margin-bottom:30px;">
+        <h2>修改昵称</h2>
+        <div>
+            <label for="nickname">昵称</label>
+            <div>
+                <input type="text" name="nickname" value="{{nickname}}" placeholder="请输入昵称">
+            </div>
+        </div>
+        <button type="submit">提交</button>
+    </form>
+
+    <form action="/user/modify/sex" method="POST" style="margin-bottom:30px;">
+        <h2>修改性别</h2>
+        <div>
+            <div>
+                <label for="nickname">隐藏</label>
+                <input type="radio" name="sex" {% if sex ==0 %} checked {% endif %} value="0">
+            </div>
+            <div>
+                <label for="nickname">男</label>
+                <input type="radio" name="sex" {% if sex ==1 %} checked {% endif %} value="1">
+            </div>
+            <div>
+                <label for="nickname">女</label>
+                <input type="radio" name="sex" {% if sex ==2 %} checked {% endif %} value="2">
+            </div>
+        </div>
+
+        <button type="submit">提交</button>
+    </form>
+</div>
+{% endblock %}
