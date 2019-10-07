@@ -1,7 +1,7 @@
 !(function () {
 
     let hostname = window.location.hostname == '127.0.0.1'?'127.0.0.1:8081':window.location.hostname;
-    console.log("这个host",host)
+    console.log("这个host",hostname)
 
     let socket = io('ws://' + hostname + '/namespace'),
         _id,
