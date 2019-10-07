@@ -96,7 +96,7 @@ async function setNickName(ctx, nickname) {
     await ctx.cookies.set(
         'tourist',
         value, {
-            domain: ctx.request.hostname, // 写cookie所在的域名
+            // domain: ctx.request.hostname, // 写cookie所在的域名
             path: '/', // 写cookie所在的路径
             maxAge: 24 * 60 * 60 * 1000, // cookie有效时长
             expires: exp.toGMTString(), // cookie失效时间
