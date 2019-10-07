@@ -55,9 +55,9 @@ router.post('/', async (ctx, next) => {
     var exp = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); //后一天
     // console.log("exp.toGMTString()", exp.toGMTString())
     console.log("host--------------------\r\n",ctx.hostname)
-    console.log("host-request-------------------\r\n",ctx.request.hostname)
+    console.log("host-request----不要---------------\r\n",ctx.request.hostname)
     await ctx.cookies.set('token', token, {
-        domain: ctx.request.hostname, // 写cookie所在的域名
+        // domain: ctx.request.hostname, // 写cookie所在的域名
         path: '/', // 写cookie所在的路径
         maxAge: 24 * 60 * 60 * 1000, // cookie有效时长
         expires: exp.toGMTString(), // cookie失效时间
