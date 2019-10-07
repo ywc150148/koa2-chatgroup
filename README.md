@@ -59,6 +59,14 @@ io.of('namespace').in('chatGroup').emit("SystemMessage", '哈哈'); // 给命名
 [https://www.jianshu.com/p/07a167b1482b](https://www.jianshu.com/p/07a167b1482b)
 ```
 
+```
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/ywc150148/koa2-chatgroup.git
+git push -u origin master
+```
+
 ```bash
 
 # 把工作区文件全部提交到缓存区
