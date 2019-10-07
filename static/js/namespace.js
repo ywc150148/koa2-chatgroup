@@ -3,7 +3,7 @@
     // let hostname = window.location.hostname == '127.0.0.1'?'127.0.0.1:8081':window.location.hostname;
     // console.log("这个host",hostname)
 
-    let socket = io('ws://' + window.location.host + '/namespace'),
+    let socket = io('ws://' + window.location.hostname + '/namespace'),
         _id,
         main = document.getElementById("main"),
         msgLayout = document.getElementById("msg-layout"),
@@ -200,7 +200,7 @@
         msg_name.classList.add("msg-name");
         msg_name.innerText = data.user.nickName;
         msg_head.classList.add("msg-head");
-        msg_head.src = 'http://' + window.location.host + `:8081/images/head/sex_${data.user.sex}.png`;
+        msg_head.src = 'http://' + window.location.hostname + `:8081/images/head/sex_${data.user.sex}.png`;
         msg_box.classList.add("msg-box");
         msg_box.innerText = data.msg;
         msg_time.classList.add("msg-time");
