@@ -1,5 +1,5 @@
 !(function () {
-    let socket = io('ws://' + location.host + '/namespace', {
+    let socket = io('ws:https//' + location.host + '/namespace', {
             reconnectionAttempts: 10,
             query: {
                 uid: this.state.user.uid
