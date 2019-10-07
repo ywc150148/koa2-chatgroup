@@ -13,7 +13,7 @@ async function check(ctx, next) {
     let tourist = await ctx.cookies.get("tourist");
     if (!tourist) {
         let tourist = "游客" + new Date().getTime() + Math.ceil(Math.random() * 100).toString();
-        // tourist = new Buffer(tourist).toString('base64');
+        // tourist = Buffer.from(tourist).toString('base64');
         await setNickName(ctx,tourist);
     }
 
@@ -89,7 +89,8 @@ function verifyToken(...args) {
 }
 
 async function setNickName(ctx, nickname) {
-    let value = new Buffer(nickname).toString('base64')
+    let value = Buffer.from(nickname).toString('base64');
+    
     // console.log("----nickname----",nickname) 
     // console.log("----value----",value)
     var exp = new Date(new Date().getTime() + 24 * 60 * 60 * 1000); //后一天

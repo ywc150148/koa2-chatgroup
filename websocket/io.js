@@ -45,7 +45,7 @@ async function getNickName(socket) {
         _id = Object.prototype.toString.call(data._id) !== "[object Undefined]" ? data._id : _id;
     } else {
         // Buffer base64 转 字符
-        nk = Object.prototype.toString.call(tourist) !== "[object Undefined]" ? new Buffer(tourist, 'base64').toString() : "未命名游客" + socket.id;
+        nk = Object.prototype.toString.call(tourist) !== "[object Undefined]" ? Buffer.from(tourist, 'base64').toString() : "未命名游客" + socket.id;
         sex = 0;
         _id = nk;
     }
